@@ -205,10 +205,11 @@ namespace MongoDB.Bson.Serialization
                         }
                         else
                         {
-                            var message = string.Format(
-                                "Element '{0}' does not match any field or property of class {1}.",
-                                elementName, _classMap.ClassType.FullName);
-                            throw new FileFormatException(message);
+                            bsonReader.SkipValue();
+                            //var message = string.Format(
+                            //    "Element '{0}' does not match any field or property of class {1}.",
+                            //    elementName, _classMap.ClassType.FullName);
+                            //throw new FileFormatException(message);
                         }
                     }
                 }
